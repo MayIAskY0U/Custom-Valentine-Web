@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pick a card!</title>
+
+</head>
+<body>
+    <div class="parent">
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <p class="title">FLIP CARD</p>
+            <p>Hover Me</p>
+        </div>
+        <div class="flip-card-back">
+            <p class="title"> OOOPS! Wrong card!</p>
+            <p>Pick another card!</p>
+        </div>
+    </div>
+</div>
+
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <p class="title">FLIP CARD</p>
+            <p>Hover Me</p>
+        </div>
+        <div class="flip-card-back">
+            <p class="title"> Pick another card!</p>
+            <p>The one on the right! >>></p>
+        </div>
+    </div>
+</div>
+
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <p class="title">FLIP CARD</p>
+            <p>Hover Me</p>
+        </div>
+        <div class="flip-card-back">
+            <p class="title" id="data"></p>
+        </div>
+    </div>
+</div>
+</div>
+<div class="parent2">
+    <div class="text">
+<h1> Pick one!</h1>
+    </div>
+</div>
+
+<script>
+
+    const json = localStorage.getItem('form');            
+    const obj = JSON.parse(json); 
+
+    for (key in obj) {    
+
+    const markup = `
+    <div>            
+    <span>${key}: ${obj[key]}</span>           
+    </div>           
+    `;  
+    document.getElementById('data').innerHTML += markup;
+    }
+    
+    </script>
+</body>
+</html>
